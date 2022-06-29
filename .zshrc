@@ -116,3 +116,5 @@ function gitall() {
 	else git commit -m update # default commit message is `update` 
 	fi # closing statement of if-else block git push origin HEAD
 }
+alias vim='nvim'
+export EDITOR='nvim'

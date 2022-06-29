@@ -12,6 +12,7 @@ set hlsearch
 set number relativenumber
 set laststatus=2
 set vb
+set paste
 set ruler
 set spelllang=en_us
 set autoindent
