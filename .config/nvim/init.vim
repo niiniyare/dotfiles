@@ -25,10 +25,10 @@ set autochdir
 hi Search cterm=NONE ctermfg=black ctermbg=red
 
 " No more Arrow Keys, deal with it
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <j>
 
 " netrw
 
