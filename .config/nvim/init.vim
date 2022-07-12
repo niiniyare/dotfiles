@@ -1,4 +1,7 @@
-let mapleader = ","
+source $HOME/dotfiles/.config/nvim/go.vim
+" source $HOME/dotfiles/.config/nvim/markdown.vim
+" source $HOME/dotfiles/.config/nvim/unicode.vim
+let mapleader = " "
 
 filetype on
 filetype indent on
@@ -49,7 +52,21 @@ Plug 'ryanoasis/vim-devicons'  " https://github.com/ryanoasis/vim-devicons + htt
 Plug 'tpope/vim-commentary'    " https://github.com/tpope/vim-commentary
 Plug 'airblade/vim-gitgutter'  " https://github.com/airblade/vim-gitgutter
 Plug 'mkitt/tabline.vim'       " https://github.com/mkitt/tabline.vim
+Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 
+" PSQL Pluging needs :SQLSetType pgsql.vi://github.com/lifepillar/pgsql.vim' " PSQL Pluging needs :SQLSetType pgsql.vim 
+Plug 'https://github.com/lifepillar/pgsql.vim'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " markdown-preview plugin
+
+" NerdTree >  NerdTre://github.com/preservim/nerdtree' 
+Plug 'https://github.com/preservim/nerdtree'
+
+"> github copilot 
+Plug 'https://github.com/github/copilot.vim'
+
+Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 "> Go
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " https://github.com/fatih/vim-go
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " https://github.com/neoclide/coc.nvim
@@ -57,6 +74,13 @@ Plug 'SirVer/ultisnips'                             " https://github.com/sirver/
 
 "> Theme
 Plug 'NLKNguyen/papercolor-theme' " https://github.com/NLKNguyen/papercolor-theme
+"> telescope is for fuzzy finder 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 call plug#end()
 
 "-- plug END
@@ -78,3 +102,21 @@ set background=dark
 colorscheme PaperColor
 
 "-- papercolor-theme END
+
+nnoremap <C-f> :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+
+nmap <F8> :TagbarToggle<CR>
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
+
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+" Find files using Telescope command-line sugar. 
+nnoremap <leader>ff <cmd>Telescope find_files<cr> 
+nnoremap <leader>fg <cmd>Telescope live_grep<cr> 
+nnoremap <leader>fb <cmd>Telescope buffers<cr> 
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

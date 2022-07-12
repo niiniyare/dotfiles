@@ -105,8 +105,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pgstart="pg_ctl -D /data/data/com.termux/files/usr/var/lib/postgresql -l logfile start"
 alias pgstop="pg_ctl -D /data/data/com.termux/files/usr/var/lib/postgresql -l logfile stop"
-alias clr="clear"
+alias c="clear"
 alias awo="cd $HOME/awo"
+alias m="make"
 export GOPATH=$HOME/go
 export PATH=$PATH:/$HOME/go/bin:$GOPATH/bin
 
@@ -122,3 +123,4 @@ function gitall() {
 }
 alias vim='nvim'
 export EDITOR='nvim'
+export HISTTIMEFORMAT="%d/%m/%y %T "
