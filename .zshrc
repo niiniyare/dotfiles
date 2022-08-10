@@ -124,3 +124,8 @@ function gitall() {
 alias vim='nvim'
 export EDITOR='nvim'
 export HISTTIMEFORMAT="%d/%m/%y %T "
+alias lg='lazygit'
+alias update='pkg update -y && pkg upgrade -y'
+export HISTTIMEFORMAT="%d/%m/%y %T "
+ alias l='lsd -a'
+alias ls='lsd -la'

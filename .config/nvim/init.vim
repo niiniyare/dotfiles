@@ -80,6 +80,8 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" generates tests from the source code 
+Plug 'buoto/gotests-vim' "https://github.com/buoto/gotests-vim
 
 call plug#end()
 
@@ -99,7 +101,7 @@ set updatetime=500
 
 set termguicolors
 set background=dark
-colorscheme PaperColor
+" colorscheme PaperColor
 
 "-- papercolor-theme END
 
