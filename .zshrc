@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+ export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -108,10 +108,21 @@ alias pgstop="pg_ctl -D /data/data/com.termux/files/usr/var/lib/postgresql -l lo
 alias c="clear"
 alias awo="cd $HOME/awo"
 alias m="make"
+alias lg='lazygit'
+alias update='pkg update -y && pkg upgrade -y'
+export HISTTIMEFORMAT="%d/%m/%y %T "
+alias l='lsd -a'
+alias ls='lsd -la'
+alias v='nvim'
+# alias youtube_dl="python3 /data/data/com.termux/files/usr/lib/python3.10/site-packages/youtube_dl "
+export HISTTIMEFORMAT="%d/%m/%y %T "
+export EDITOR='nvim'
 export GOPATH=$HOME/go
 export PATH=$PATH:/$HOME/go/bin:$GOPATH/bin
-
-
+alias upgradable="apt list --upgradable -a"
+alias clip-set="termux-clipboard-set"
+alias clip-get="termux-clipboard-get"
+alias open="termux-open"
 function gitall() { 
 	git add -A 
 	if [ "$1" != "" ] 
@@ -121,11 +132,7 @@ function gitall() {
 	else git commit -m update # default commit message is `update` 
 	fi # closing statement of if-else block git push origin HEAD
 }
-alias vim='nvim'
-export EDITOR='nvim'
-export HISTTIMEFORMAT="%d/%m/%y %T "
-alias lg='lazygit'
-alias update='pkg update -y && pkg upgrade -y'
-export HISTTIMEFORMAT="%d/%m/%y %T "
- alias l='lsd -a'
-alias ls='lsd -la'
+
+
+eval "$(starship init zsh)"	
+
