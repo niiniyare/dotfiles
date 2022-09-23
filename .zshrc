@@ -13,7 +13,7 @@ ZSH_THEME="nanotech"
 #ZSH_THEME="juanghurtado"
 #ZSH_THEME="nicoulaj"
 #ZSH_THEME="robbyrussell"
-
+#ZSH_THEME="base"
 # Set list of themes to pick from when loading at random
 # Settingnotech" this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
