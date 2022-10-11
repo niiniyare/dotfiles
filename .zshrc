@@ -56,7 +56,7 @@ ZSH_THEME="nanotech"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -64,7 +64,7 @@ ZSH_THEME="nanotech"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -110,12 +110,9 @@ alias awo="cd $HOME/awo"
 alias m="make"
 alias lg='lazygit'
 alias update='pkg update -y && pkg upgrade -y'
-export HISTTIMEFORMAT="%d/%m/%y %T "
 alias l='lsd -a'
 alias ls='lsd -la'
 alias v='nvim'
-# alias youtube_dl="python3 /data/data/com.termux/files/usr/lib/python3.10/site-packages/youtube_dl "
-export HISTTIMEFORMAT="%d/%m/%y %T "
 export EDITOR='nvim'
 export GOPATH=$HOME/go
 export PATH=$PATH:/$HOME/go/bin:$GOPATH/bin
@@ -123,6 +120,8 @@ alias upgradable="apt list --upgradable -a"
 alias clip-set="termux-clipboard-set"
 alias clip-get="termux-clipboard-get"
 alias open="termux-open"
+alias markdown-server="algernon -s -u -n . :3002"
+alias httpd="http"
 function gitall() { 
 	git add -A 
 	if [ "$1" != "" ] 
