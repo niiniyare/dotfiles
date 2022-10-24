@@ -111,8 +111,8 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pgstart="pg_ctl -D /data/data/com.termux/files/usr/var/lib/postgresql -l logfile start"
-alias pgstop="pg_ctl -D /data/data/com.termux/files/usr/var/lib/postgresql -l logfile stop"
+alias pgstart="pg_ctl -D ~/pg start"
+alias pgstop="pg_ctl -D ~/pg stop"
 alias c="clear"
 alias awo="cd $HOME/awo"
 alias m="make"
@@ -127,9 +127,13 @@ export PATH=$PATH:/$HOME/go/bin:$GOPATH/bin
 alias upgradable="apt list --upgradable -a"
 alias clip-set="termux-clipboard-set"
 alias clip-get="termux-clipboard-get"
+alias rm="rm -rf"
 alias open="termux-open"
 alias markdown-server="algernon -s -u -n . :3002"
 alias httpd="http"
+alias how="cht.sh"
+alias cheat.sh="cht.sh --shell"
+
 function gitall() { 
 	git add -A 
 	if [ "$1" != "" ] 
