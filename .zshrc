@@ -111,8 +111,8 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pgstart="pg_ctl -D ~/pg start"
-alias pgstop="pg_ctl -D ~/pg stop"
+alias pgstart="pg_ctl -D ~/pg -l ~/pg/logfile start"
+alias pgstop="pg_ctl -D ~/pg -l ~/pg/logfile stop"
 alias c="clear"
 alias awo="cd $HOME/awo"
 alias m="make"
