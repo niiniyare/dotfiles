@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+#
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -18,7 +19,8 @@ ZSH_THEME="nanotech"
 # Settingnotech" this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
- #ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "cloud" "nicoulaj" "nanotech" "juanghurtado")
+ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "cloud" "nicoulaj" "nanotech" "juanghurtado" "base" "")
+CONFIG="$HOME/.config"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -30,10 +32,10 @@ ZSH_THEME="nanotech"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -82,6 +84,7 @@ plugins=(
 	zsh-syntax-highlighting 
   fast-syntax-highlighting 
 	aliases
+	you-should-use $plugins
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,7 +117,7 @@ export LANG=en_US.UTF-8
 alias pgstart="pg_ctl -D ~/pg -l ~/pg/logfile start"
 alias pgstop="pg_ctl -D ~/pg -l ~/pg/logfile stop"
 alias c="clear"
-alias awo="cd $HOME/awo"
+alias awo="clear && cd $HOME/awo"
 alias m="make"
 alias lg='lazygit'
 alias update='pkg update -y && pkg upgrade -y'
@@ -122,17 +125,20 @@ alias l='lsd -a'
 alias ls='lsd -la'
 alias v='nvim'
 export EDITOR='nvim'
-export GOPATH=$HOME/go
-export PATH=$PATH:/$HOME/go/bin:$GOPATH/bin
 alias upgradable="apt list --upgradable -a"
 alias clip-set="termux-clipboard-set"
 alias clip-get="termux-clipboard-get"
 alias rm="rm -rf"
 alias open="termux-open"
 alias markdown-server="algernon -s -u -n . :3002"
-alias httpd="http"
 alias how="cht.sh"
 alias cheat.sh="cht.sh --shell"
+alias zr="source ~/.zshrc"
+alias -s {go,js,jsx,ts,tsx,py,lua,json,md,sql,yaml,Makefile,css,scss,html,csv,sass,proto}=nvim
+# open ~/.zshrc in using the default editor specified in $EDITOR
+alias zshrc="nvim $HOME/.zshrc"
+# alias mdns="multicast-dns"
+alias structurizr="/data/data/com.termux/files/home/structurizr.sh"
 
 function gitall() { 
 	git add -A 
@@ -146,4 +152,6 @@ function gitall() {
 
 
 eval "$(starship init zsh)"	
+export GOPATH=$HOME/go
+export PATH=$PATH:/$HOME/go/bin:$GOPATH/bin
 
