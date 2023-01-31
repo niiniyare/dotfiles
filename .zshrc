@@ -84,6 +84,7 @@ plugins=(
 	zsh-syntax-highlighting 
   fast-syntax-highlighting 
 	aliases
+	asdf
 	you-should-use $plugins
 )
 
@@ -121,10 +122,9 @@ alias awo="clear && cd $HOME/awo"
 alias m="make"
 alias lg='lazygit'
 alias update='pkg update -y && pkg upgrade -y'
-alias l='lsd -a'
-alias ls='lsd -la'
+alias l='lsd -ah'
+alias ls='lsd -lha'
 alias v='nvim'
-export EDITOR='nvim'
 alias upgradable="apt list --upgradable -a"
 alias clip-set="termux-clipboard-set"
 alias clip-get="termux-clipboard-get"
@@ -134,7 +134,8 @@ alias markdown-server="algernon -s -u -n . :3002"
 alias how="cht.sh"
 alias cheat.sh="cht.sh --shell"
 alias zr="source ~/.zshrc"
-alias -s {go,js,jsx,ts,tsx,py,lua,json,md,sql,yaml,Makefile,css,scss,html,csv,sass,proto}=nvim
+alias -s {go,js,jsx,ts,tsx,py,lua,json,md,sql,yaml,yml,toml,tml,Makefile,css,scss,html,csv,sass,proto,fizz}=nvim
+alias L=" | jq"
 # open ~/.zshrc in using the default editor specified in $EDITOR
 alias zshrc="nvim $HOME/.zshrc"
 # alias mdns="multicast-dns"
@@ -152,6 +153,16 @@ function gitall() {
 
 
 eval "$(starship init zsh)"	
+export EDITOR='nvim'
 export GOPATH=$HOME/go
 export PATH=$PATH:/$HOME/go/bin:$GOPATH/bin
-
+export GOPROXY=https://goproxy.io,direct
+export PATH=~/.npm-global/bin:$PATH
+autoload -U compinit; compinit
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+export HOMEBREW_TEMP=/data/data/com.termux/files/usr/tmp
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ENV_FILTERING=1
+export HOMEBREW_VERBOSE=1
+export PATH="/data/data/com.termux/files/home/prefix/brew/bin:$PATH"
+eval "$(rbenv init - zsh)"

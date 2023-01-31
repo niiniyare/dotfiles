@@ -1,5 +1,5 @@
 (
-.config/gitui/    selected_tab: Reset,
+    selected_tab: Reset,
     command_fg: White,
     selection_bg: Blue,
     selection_fg: White,

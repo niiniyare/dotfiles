@@ -13,12 +13,12 @@ success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set
 
 # Disable the package module, hiding it from the prompt completely
 [package]
-disabled = true
+disabled = false
 
 [golang]
 # format = "via [🏎💨 $version](bold cyan)"
 symbol = "Go "
-detect_files = ["go.mod", "go.sum", "go.work", "glide.yaml", "Gopkg.yml", "Gopkg.lock", ".go-version"] 
+detect_files = ["go.mod", "go.sum", "go.work", ".go-version"] 
 detect_extensions = ["go"]
 version_format = "v${raw}"
 format = "via [$symbol($version )]($style)"
