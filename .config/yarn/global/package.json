@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "create-next-app": "^13.1.1",
-    "neovim": "^4.10.1"
+    "create-refine-app": "^1.5.2"
   }
 }

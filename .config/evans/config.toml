@@ -25,9 +25,9 @@ cacertfile = ''
 certfile = ''
 certkeyfile = ''
 web = false
+
 [request.header]
 grpc-client = ['evans']
-
 
 [server]
 host = '127.0.0.1'
@@ -35,4 +35,3 @@ name = ''
 port = '50051'
 reflection = false
 tls = false
-

@@ -22,3 +22,4 @@ detect_files = ["go.mod", "go.sum", "go.work", ".go-version"]
 detect_extensions = ["go"]
 version_format = "v${raw}"
 format = "via [$symbol($version )]($style)"
+
